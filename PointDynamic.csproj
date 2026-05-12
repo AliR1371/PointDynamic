@@ -35,12 +35,10 @@
     <EmbeddedResource Include="Resources\icon_16.png" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <PostBuildEvent>
-      if not exist "C:\ProgramData\Autodesk\Revit\Addins\2026\" mkdir "C:\ProgramData\Autodesk\Revit\Addins\2026\"
-      copy /Y "$(TargetPath)" "C:\ProgramData\Autodesk\Revit\Addins\2026\"
-      copy /Y "$(ProjectDir)PointDynamic.addin" "C:\ProgramData\Autodesk\Revit\Addins\2026\"
-    </PostBuildEvent>
-  </PropertyGroup>
+  <Target Name="DeployAddin" AfterTargets="Build">
+    <MakeDir Directories="C:\ProgramData\Autodesk\Revit\Addins\2026" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\ProgramData\Autodesk\Revit\Addins\2026\" />
+    <Copy SourceFiles="$(ProjectDir)PointDynamic.addin" DestinationFolder="C:\ProgramData\Autodesk\Revit\Addins\2026\" />
+  </Target>
 
 </Project>
