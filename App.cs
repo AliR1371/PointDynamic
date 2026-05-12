@@ -20,9 +20,9 @@ namespace PointDynamic
                 "IsolateRegion",
                 "Isolate\nRegion",
                 assemblyPath,
-                "PointDynamic.IsolatePointCloudRegionCommand")
+                "PointDynamic.LauncherCommand")
             {
-                ToolTip = "Pick a point cloud, then drag a box to isolate a region.",
+                ToolTip = "Open PointDynamic tools — isolate a region or clear a filter.",
                 LargeImage = LoadIcon("icon_32.png"),
                 Image = LoadIcon("icon_16.png")
             };

@@ -35,6 +35,10 @@
     <EmbeddedResource Include="Resources\icon_16.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Include="PointDynamicWindow.xaml" />
+  </ItemGroup>
+
   <PropertyGroup>
     <PostBuildEvent>
       if not exist "C:\ProgramData\Autodesk\Revit\Addins\2026\" mkdir "C:\ProgramData\Autodesk\Revit\Addins\2026\"

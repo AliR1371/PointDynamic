@@ -1,0 +1,115 @@
+<Window x:Class="PointDynamic.PointDynamicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PointDynamic"
+        Width="380" Height="270"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#1C2B3A">
+
+    <Window.Resources>
+        <Style x:Key="ToolBtn" TargetType="Button">
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="6"
+                                Padding="14,0">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Opacity" Value="0.80"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Bd" Property="Opacity" Value="0.60"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="24,20,24,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="PointDynamic" FontSize="17" FontWeight="Bold" Foreground="White"/>
+            <TextBlock Text="Point Cloud Tools" FontSize="11" Foreground="#7FA8CC" Margin="0,3,0,0"/>
+        </StackPanel>
+
+        <!-- Isolate Region -->
+        <Button Grid.Row="2"
+                Style="{StaticResource ToolBtn}"
+                Background="#1D3D5C" BorderBrush="#2E5E8E"
+                Click="BtnIsolate_Click">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="⬜" FontSize="22" Foreground="#5BC8FF"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Isolate Region" FontSize="13" FontWeight="SemiBold" Foreground="White"/>
+                    <TextBlock Text="Draw a box to keep only those points visible"
+                               FontSize="10" Foreground="#7FA8CC" Margin="0,2,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Clear Filter -->
+        <Button Grid.Row="4"
+                Style="{StaticResource ToolBtn}"
+                Background="#1A3D2C" BorderBrush="#2A6040"
+                Click="BtnClear_Click">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="✖" FontSize="20" Foreground="#5BFF99"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Clear Filter" FontSize="13" FontWeight="SemiBold" Foreground="White"/>
+                    <TextBlock Text="Remove the active region filter from a point cloud"
+                               FontSize="10" Foreground="#7FA8CC" Margin="0,2,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Cancel -->
+        <Button Grid.Row="6" Click="BtnCancel_Click"
+                HorizontalAlignment="Right" Background="Transparent" BorderThickness="0"
+                Cursor="Hand">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock x:Name="Txt" Text="Cancel" FontSize="11"
+                               Foreground="#7FA8CC" VerticalAlignment="Center"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Txt" Property="TextDecorations" Value="Underline"/>
+                            <Setter TargetName="Txt" Property="Foreground" Value="#AACCEE"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
