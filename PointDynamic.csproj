@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <!-- Output as a class library (.dll) so Revit can load it as an addin -->
+    <OutputType>Library</OutputType>
+    <AssemblyName>PointDynamic</AssemblyName>
+    <RootNamespace>PointDynamic</RootNamespace>
+    <!-- Do not copy Revit API DLLs to the output folder -->
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <!--
+    Revit 2025 installs to: C:\Program Files\Autodesk\Revit 2025\
+    Adjust the path below if you target a different Revit version.
+  -->
+  <PropertyGroup>
+    <RevitDir>C:\Program Files\Autodesk\Revit 2025</RevitDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>F:\Program Files\Autodesk\Revit 2026\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>F:\Program Files\Autodesk\Revit 2026\RevitAPIUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
