@@ -36,9 +36,9 @@
   </ItemGroup>
 
   <Target Name="DeployAddin" AfterTargets="Build">
-    <MakeDir Directories="$(APPDATA)\Autodesk\Revit\Addins\2026" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(APPDATA)\Autodesk\Revit\Addins\2026\" />
-    <Copy SourceFiles="$(ProjectDir)PointDynamic.addin" DestinationFolder="$(APPDATA)\Autodesk\Revit\Addins\2026\" />
+    <MakeDir Directories="C:\ProgramData\Autodesk\Revit\Addins\2026" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\ProgramData\Autodesk\Revit\Addins\2026\" />
+    <Copy SourceFiles="$(ProjectDir)PointDynamic.addin" DestinationFolder="C:\ProgramData\Autodesk\Revit\Addins\2026\" />
   </Target>
 
 </Project>
