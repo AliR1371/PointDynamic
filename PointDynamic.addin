@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>PointDynamic</Name>
+    <Assembly>PointDynamic.dll</Assembly>
+    <FullClassName>PointDynamic.App</FullClassName>
+    <ClientId>fa75e2e2-af28-4a24-976b-b861051f959f</ClientId>
+    <VendorId>PointDynamic</VendorId>
+    <VendorDescription>Point Cloud Region Isolation Tool</VendorDescription>
+  </AddIn>
+</RevitAddIns>
