@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(Remove-Item \"c:\\\\Users\\\\Vision\\\\source\\\\repos\\\\PointDynamic\\\\Class1.cs\")",
-      "WebSearch"
-    ]
-  }
-}
